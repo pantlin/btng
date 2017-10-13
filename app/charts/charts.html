@@ -1,0 +1,628 @@
+
+<div class="row">
+    <div class="col-lg-12"><h2 class="page-header">图表插件 Charts.js</h2></div>
+    <div class="col-lg-6">
+        <div id="canvas-holder" style="width:100%">
+            <canvas id="chart-area" />
+        </div>
+        <button id="randomizeData3" class="btn btn-default btn-sm">随机数据</button>
+        <button id="addDataset3" class="btn btn-default btn-sm">添加数据集</button>
+        <button id="removeDataset3" class="btn btn-default btn-sm">删除数据集</button>
+        <button id="addData3" class="btn btn-default btn-sm">添加数据</button>
+        <button id="removeData3" class="btn btn-default btn-sm">删除数据</button>
+        <script>
+            $(function () {
+
+
+                var randomScalingFactor3 = function() {
+                    return Math.round(Math.random() * 100);
+                };
+                var randomColorFactor3 = function() {
+                    return Math.round(Math.random() * 255);
+                };
+                var randomColor3 = function(opacity) {
+                    return 'rgba(' + randomColorFactor3() + ',' + randomColorFactor3() + ',' + randomColorFactor3() + ',' + (opacity || '.3') + ')';
+                };
+
+                var config = {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                            ],
+                            backgroundColor: [
+                                "#F7464A",
+                                "#46BFBD",
+                                "#FDB45C",
+                                "#949FB1",
+                                "#4D5360",
+                            ],
+                            label: 'Dataset 1'
+                        }, {
+                            hidden: true,
+                            data: [
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                            ],
+                            backgroundColor: [
+                                "#F7464A",
+                                "#46BFBD",
+                                "#FDB45C",
+                                "#949FB1",
+                                "#4D5360",
+                            ],
+                            label: 'Dataset 2'
+                        }, {
+                            data: [
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                                randomScalingFactor3(),
+                            ],
+                            backgroundColor: [
+                                "#F7464A",
+                                "#46BFBD",
+                                "#FDB45C",
+                                "#949FB1",
+                                "#4D5360",
+                            ],
+                            label: 'Dataset 3'
+                        }],
+                        labels: [
+                            "Red",
+                            "Green",
+                            "Yellow",
+                            "Grey",
+                            "Dark Grey"
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: '图表插件 Chart.js Doughnut Chart (环形)'
+                        }
+                    }
+                };
+
+
+                var ctx = document.getElementById("chart-area").getContext("2d");
+                window.myDoughnut = new Chart(ctx, config);
+
+                $('#randomizeData3').click(function() {
+                    $.each(config.data.datasets, function(i, dataset) {
+                        dataset.data = dataset.data.map(function() {
+                            return randomScalingFactor3();
+                        });
+
+                        dataset.backgroundColor = dataset.backgroundColor.map(function() {
+                            return randomColor3(0.7);
+                        });
+                    });
+
+                    window.myDoughnut.update();
+                });
+
+                $('#addDataset3').click(function() {
+                    var newDataset = {
+                        backgroundColor: [],
+                        data: [],
+                        label: 'New dataset ' + config.data.datasets.length,
+                    };
+
+                    for (var index = 0; index < config.data.labels.length; ++index) {
+                        newDataset.data.push(randomScalingFactor3());
+                        newDataset.backgroundColor.push(randomColor3(0.7));
+                    }
+
+                    config.data.datasets.push(newDataset);
+                    window.myDoughnut.update();
+                });
+
+                $('#addData3').click(function() {
+                    if (config.data.datasets.length > 0) {
+                        config.data.labels.push('data #' + config.data.labels.length);
+
+                        $.each(config.data.datasets, function(index, dataset) {
+                            dataset.data.push(randomScalingFactor3());
+                            dataset.backgroundColor.push(randomColor3(0.7));
+                        });
+
+                        window.myDoughnut.update();
+                    }
+                });
+
+                $('#removeDataset3').click(function() {
+                    config.data.datasets.splice(0, 1);
+                    window.myDoughnut.update();
+                });
+
+                $('#removeData3').click(function() {
+                    config.data.labels.splice(-1, 1); // remove the label first
+
+                    config.data.datasets.forEach(function(dataset, datasetIndex) {
+                        dataset.data.pop();
+                        dataset.backgroundColor.pop();
+                    });
+
+                    window.myDoughnut.update();
+                });
+            });
+        </script>
+    </div>
+    <div class="col-lg-6">
+        <div style="width:100%;">
+            <canvas id="canvas"></canvas>
+        </div>
+        <br>
+        <br>
+        <button id="randomizeData" class="btn btn-default btn-sm">随机数据</button>
+        <button id="changeDataObject" class="btn btn-default btn-sm">修改数据对象</button>
+        <button id="addDataset" class="btn btn-default btn-sm">添加数据集</button>
+        <button id="removeDataset" class="btn btn-default btn-sm">删除数据集</button>
+        <button id="addData" class="btn btn-default btn-sm">添加数据</button>
+        <button id="removeData" class="btn btn-default btn-sm">删除数据</button>
+        <script>
+            $(function () {
+
+
+            var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            var randomScalingFactor = function() {
+                return Math.round(Math.random() * 100);
+                //return 0;
+            };
+            var randomColorFactor = function() {
+                return Math.round(Math.random() * 255);
+            };
+            var randomColor = function(opacity) {
+                return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+            };
+
+            var config = {
+                type: 'line',
+                data: {
+                    labels: ["January", "February", "March", "April", "May", "June", "July"],
+                    datasets: [{
+                        label: "My First dataset",
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                        fill: false,
+                        borderDash: [5, 5],
+                    }, {
+                        hidden: true,
+                        label: 'hidden dataset',
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    }, {
+                        label: "My Second dataset",
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title:{
+                        display:true,
+                        text:'Chart.js Line Chart (线性)'
+                    },
+                    tooltips: {
+                        mode: 'label',
+                        callbacks: {
+                            // beforeTitle: function() {
+                            //     return '...beforeTitle';
+                            // },
+                            // afterTitle: function() {
+                            //     return '...afterTitle';
+                            // },
+                            // beforeBody: function() {
+                            //     return '...beforeBody';
+                            // },
+                            // afterBody: function() {
+                            //     return '...afterBody';
+                            // },
+                            // beforeFooter: function() {
+                            //     return '...beforeFooter';
+                            // },
+                            // footer: function() {
+                            //     return 'Footer';
+                            // },
+                            // afterFooter: function() {
+                            //     return '...afterFooter';
+                            // },
+                        }
+                    },
+                    hover: {
+                        mode: 'dataset'
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                show: true,
+                                labelString: 'Month'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                show: true,
+                                labelString: 'Value'
+                            },
+                            ticks: {
+                                suggestedMin: -10,
+                                suggestedMax: 250
+                            }
+                        }]
+                    }
+                }
+            };
+
+            $.each(config.data.datasets, function(i, dataset) {
+                dataset.borderColor = randomColor(0.4);
+                dataset.backgroundColor = randomColor(0.5);
+                dataset.pointBorderColor = randomColor(0.7);
+                dataset.pointBackgroundColor = randomColor(0.5);
+                dataset.pointBorderWidth = 1;
+            });
+            $('#randomizeData').click(function() {
+                $.each(config.data.datasets, function(i, dataset) {
+                    dataset.data = dataset.data.map(function() {
+                        return randomScalingFactor();
+                    });
+
+                });
+
+                window.myLine.update();
+            });
+
+            $('#changeDataObject').click(function() {
+                config.data = {
+                    labels: ["July", "August", "September", "October", "November", "December"],
+                    datasets: [{
+                        label: "My First dataset",
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                        fill: false,
+                    }, {
+                        label: "My Second dataset",
+                        fill: false,
+                        data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
+                    }]
+                };
+
+                $.each(config.data.datasets, function(i, dataset) {
+                    dataset.borderColor = randomColor(0.4);
+                    dataset.backgroundColor = randomColor(0.5);
+                    dataset.pointBorderColor = randomColor(0.7);
+                    dataset.pointBackgroundColor = randomColor(0.5);
+                    dataset.pointBorderWidth = 1;
+                });
+
+                // Update the chart
+                window.myLine.update();
+            });
+
+            $('#addDataset').click(function() {
+                var newDataset = {
+                    label: 'Dataset ' + config.data.datasets.length,
+                    borderColor: randomColor(0.4),
+                    backgroundColor: randomColor(0.5),
+                    pointBorderColor: randomColor(0.7),
+                    pointBackgroundColor: randomColor(0.5),
+                    pointBorderWidth: 1,
+                    data: [],
+                };
+
+                for (var index = 0; index < config.data.labels.length; ++index) {
+                    newDataset.data.push(randomScalingFactor());
+                }
+
+                config.data.datasets.push(newDataset);
+                window.myLine.update();
+            });
+
+            $('#addData').click(function() {
+                if (config.data.datasets.length > 0) {
+                    var month = MONTHS[config.data.labels.length % MONTHS.length];
+                    config.data.labels.push(month);
+
+                    $.each(config.data.datasets, function(i, dataset) {
+                        dataset.data.push(randomScalingFactor());
+                    });
+
+                    window.myLine.update();
+                }
+            });
+
+            $('#removeDataset').click(function() {
+                config.data.datasets.splice(0, 1);
+                window.myLine.update();
+            });
+
+            $('#removeData').click(function() {
+                config.data.labels.splice(-1, 1); // remove the label first
+
+                config.data.datasets.forEach(function(dataset, datasetIndex) {
+                    dataset.data.pop();
+                });
+
+                window.myLine.update();
+            });
+                var ctx = document.getElementById("canvas").getContext("2d");
+                window.myLine = new Chart(ctx, config);
+            });
+        </script>
+    </div>
+    <div class="col-lg-6">
+        <div  style="width: 100%;">
+            <canvas id="canvas2"></canvas>
+        </div>
+        <button id="randomizeData2" class="btn btn-default btn-sm">随机 Data</button>
+        <button id="addDataset2" class="btn btn-default btn-sm">添加 Dataset</button>
+        <button id="removeDataset2" class="btn btn-default btn-sm">删除 Dataset</button>
+        <button id="addData2" class="btn btn-default btn-sm">添加 Data</button>
+        <button id="removeData2" class="btn btn-default btn-sm">删除 Data</button>
+        <script>
+            $(function () {
+                
+
+            var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            var randomScalingFactor2 = function() {
+                return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+            };
+            var randomColorFactor2 = function() {
+                return Math.round(Math.random() * 255);
+            };
+            var randomColor2 = function() {
+                return 'rgba(' + randomColorFactor2() + ',' + randomColorFactor2() + ',' + randomColorFactor2() + ',.7)';
+            };
+
+            var barChartData = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: 'Dataset 1',
+                    backgroundColor: "rgba(220,220,220,0.5)",
+                    data: [randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2()]
+                }, {
+                    hidden: true,
+                    label: 'Dataset 2',
+                    backgroundColor: "rgba(151,187,205,0.5)",
+                    data: [randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2()]
+                }, {
+                    label: 'Dataset 3',
+                    backgroundColor: "rgba(151,187,205,0.5)",
+                    data: [randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2(), randomScalingFactor2()]
+                }]
+
+            };
+
+
+                var ctx = document.getElementById("canvas2").getContext("2d");
+                window.myBar = new Chart(ctx, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: {
+                        // Elements options apply to all of the options unless overridden in a dataset
+                        // In this case, we are setting the border of each bar to be 2px wide and green
+                        elements: {
+                            rectangle: {
+                                borderWidth: 2,
+                                borderColor: 'rgb(0, 255, 0)',
+                                borderSkipped: 'bottom'
+                            }
+                        },
+                        responsive: true,
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Chart.js Bar Chart (柱形)'
+                        }
+                    }
+                });
+
+
+            $('#randomizeData2').click(function() {
+                var zero = Math.random() < 0.2 ? true : false;
+                $.each(barChartData.datasets, function(i, dataset) {
+                    dataset.backgroundColor = randomColor2();
+                    dataset.data = dataset.data.map(function() {
+                        return zero ? 0.0 : randomScalingFactor2();
+                    });
+
+                });
+                window.myBar.update();
+            });
+
+            $('#addDataset2').click(function() {
+                var newDataset = {
+                    label: 'Dataset ' + barChartData.datasets.length,
+                    backgroundColor: randomColor2(),
+                    data: []
+                };
+
+                for (var index = 0; index < barChartData.labels.length; ++index) {
+                    newDataset.data.push(randomScalingFactor2());
+                }
+
+                barChartData.datasets.push(newDataset);
+                window.myBar.update();
+            });
+
+            $('#addData2').click(function() {
+                if (barChartData.datasets.length > 0) {
+                    var month = MONTHS[barChartData.labels.length % MONTHS.length];
+                    barChartData.labels.push(month);
+
+                    for (var index = 0; index < barChartData.datasets.length; ++index) {
+                        //window.myBar.addData(randomScalingFactor2(), index);
+                        barChartData.datasets[index].data.push(randomScalingFactor2());
+                    }
+
+                    window.myBar.update();
+                }
+            });
+
+            $('#removeDataset2').click(function() {
+                barChartData.datasets.splice(0, 1);
+                window.myBar.update();
+            });
+
+            $('#removeData2').click(function() {
+                barChartData.labels.splice(-1, 1); // remove the label first
+
+                barChartData.datasets.forEach(function(dataset, datasetIndex) {
+                    dataset.data.pop();
+                });
+
+                window.myBar.update();
+            });
+            });
+        </script>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12"><h2 class="page-header">图表插件 highcharts</h2></div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"> 折线 Charts line</div>
+            <div class="panel-body"><div id="container" style="min-width: 200px; height: 400px; margin: 0 auto"></div></div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">柱形 Charts column</div>
+            <div class="panel-body"><div id="container2" style="min-width: 200px; height: 400px; margin: 0 auto"></div></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#container').highcharts({
+            title: {
+                text: 'This is my test line charts',
+                x: -20 //center
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Temperature (°C)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '°C'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Tokyo',
+                data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+            }, {
+                name: 'New York',
+                data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+            }, {
+                name: 'Berlin',
+                data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+            }, {
+                name: 'London',
+                data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            }]
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#container2').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'This is my colunm charts'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Jan',
+                    'Feb',
+                    'Mar',
+                    'Apr',
+                    'May',
+                    'Jun',
+                    'Jul',
+                    'Aug',
+                    'Sep',
+                    'Oct',
+                    'Nov',
+                    'Dec'
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Rainfall (mm)'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Tokyo',
+                data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+
+            }, {
+                name: 'New York',
+                data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+
+            }, {
+                name: 'London',
+                data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+
+            }, {
+                name: 'Berlin',
+                data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+
+            }]
+        });
+    });
+</script>

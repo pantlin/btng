@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">123123</h1>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"> heading</div>
+            <div class="panel-body"> body</div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"> heading2</div>
+            <div class="panel-body"> body2</div>
+        </div>
+    </div>
+</div>
+
+
+<h1>Charts</h1>
+<div ng-include="'app/charts/charts.html'"></div>
+<h1>Table</h1>
+<div ng-include="'app/table/tableStatic.html'"></div>
+<div ng-include="'app/datatable/datatable.html'"></div>
+<h1>Page</h1>
+<div ng-include="'app/page/pageBacis.html'"></div>
+<h1>Tree</h1>
+<div oc-lazy-load="['Tree','app/tree/tree.service.js','app/tree/tree.ctrl.js']">
+    <div ng-include="'app/tree/tree.html'"></div>
+</div>

@@ -1,0 +1,257 @@
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">医师</h2>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <dl class="dl-horizontal">
+                            <dt >
+                            <p class="text-center">
+                                <img class="img-circle" src="//img.guahao.com/img/character/doc-unknow-l.png?_=20121223" alt="陈国忠">
+                            </p>
+                            <p class="text-center">
+                                <a href="javascript:;">
+                                    <i class="glyphicon glyphicon-plus"></i><span>关注</span>
+                                </a>
+                                <span class="mark-count">1</span>
+                            </p>
+                            <p class="text-center">
+                                <img src="img/2wmscan.png" alt=""
+                                     data-placement="bottom"
+                                     data-trigger="hover"
+                                     data-toggle="popover"
+                                     data-html="true"
+                                     data-content='<img width="250px" src="img/2wm.jpg">'>
+
+                            </p>
+                            </dt>
+                            <dd >
+                                <h4>
+                                    <strong>陈国忠</strong>
+                                    <span> 主任医师</span>
+                                </h4>
+
+                                    <p>
+                                        <a  href="javascript:;">广西中医药大学附属第一医院</a>
+                                        <span> - </span>
+                                        <a  href="javascript:;">脾胃病科</a>
+                                    </p>
+                                    <p>
+                                        <a href="javascript:;"> 广西中医药大学附属第一医院</a>
+                                        <span> - </span>
+                                        <a href="javascript:;"> 消化内科</a>
+                                    </p>
+
+                                <p>
+                                    <a href="javascript:;" class="label label-info">消化性溃疡</a>
+                                </p>
+
+                                <div class="goodat">
+                                    <b>擅长：</b>
+                                    <span>消化性溃疡、炎症性肠病、胆胰疾病，胃肠道早期癌的诊断与治疗</span>
+                                </div>
+                                <div class="about">
+                                    <b>简介：</b>
+                                    <span>陈国忠，男，博士研究生，消化内科副主
+                                        任，广西中医药学会青年委员，广西中西医
+                                        结合消化专业委员会委员，广西中医学院和
+                                        广西中医学院一附院消化内科后备学科带头人
+                                        。200...
+                                    </span>
+                                    <a href="javascript:;">更多</a>
+                                </div>
+
+
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <p class="text-center">
+                                    <button class="btn btn-rounded btn-lg btn-icon btn-info">挂号</button>
+                                    <button class="btn btn-rounded btn-lg btn-icon btn-info">图文</button>
+                                    <button class="btn btn-rounded btn-lg btn-icon btn-info">电话</button>
+                                    <button class="btn btn-rounded btn-lg btn-icon btn-info">视频</button>
+                                    <div style=" display: none; width:330px;padding:0;left:-1px;top:100px;">
+                                        <div style="font-size: 12px;color:#333333;margin:0;text-align:center;height:68px;background: #f8f8f8;">
+                                            <div style="font-size:14px;color:#333;line-height:25px;padding-top:10px;">医生尚未开诊</div>
+                                            设置开诊提醒后医生开诊时会给您发送短信提醒
+                                        </div>
+                                    </div>
+                                </p>
+                                <hr/>
+                                <p>
+                                <uib-rating ng-model="rate" max="5" read-only="isReadonly" aria-labelledby="default-rating"></uib-rating>
+                                    <strong style="opacity: 1;">暂无评分</strong>
+                                </p>
+                                <p>
+                                    <span>预约量</span>
+                                    <strong>9</strong>
+                                    <span>问诊量</span>
+                                    <strong>暂无</strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9">
+        <div class="panel">
+            <div class="panel-body">
+                <h4>预约挂号 <span class="small">挂号费由医院自行设定，平台不收取任何额外费用</span></h4>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-7">
+                        <p>
+                            <label>医院：</label>
+                            <a href="javascript:;"> 广西中医药大学附属第一医院</a>
+                        </p>
+                        <p>
+                            <label>科室：</label>
+                            <a href="javascript:;"> 脾胃病科</a>
+                            <a href="javascript:;">消化内科</a>
+                        </p>
+                        <p>
+                            <label>排班：</label>
+                            <span class="text-danger">登录即可查看实时号源状态</span>
+                        </p>
+                        <p>
+                            <button class="btn btn-rounded  btn-icon btn-default" style="width: 80px;height: 80px;"
+                                    data-placement="bottom"
+                                    data-trigger="hover"
+                                    data-toggle="popover"
+                                    data-html="true"
+                                    data-content='<div class="text-info"><span style="color: #ce4545;">登录即可查看号源状态</span>
+                                                  <br> 医院：广西中医药大学附属第一医院
+                                                  <br>科室： 脾胃病科
+                                                  <br>门诊类型：专家门诊<br>出诊时间：2016-06-16 上午
+                                                  <br>参考挂号费：<strong>￥8.5</strong><br>医院平台</div></div>'>
+
+                                <span>6/16<br> 周四</span>
+                                <br>
+                                <label class="badge">上</label>
+                            </button>
+                            <button class="btn btn-rounded  btn-icon btn-default" style="width: 80px;height: 80px;"
+                                    data-placement="bottom"
+                                    data-trigger="hover"
+                                    data-toggle="popover"
+                                    data-html="true"
+                                    data-content='<div class="text-info"><span style="color: #ce4545;">登录即可查看号源状态</span>
+                                                  <br> 医院：广西中医药大学附属第一医院
+                                                  <br>科室： 脾胃病科
+                                                  <br>门诊类型：专家门诊<br>出诊时间：2016-06-16 下午
+                                                  <br>参考挂号费：<strong>￥8.5</strong><br>医院平台</div></div>'>
+                                <span>6/16<br> 周四</span>
+                                <br>
+                                <label class="badge">下</label>
+                            </button>
+                        </p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="panel">
+                            <div class="panel-body" >
+                                <p style="line-height: 2.4;color: #333;">医院平台预约规则(班次每日<span>08:00</span>更新)</p>
+                                <p>医院规则：</p>
+                                <ol  style="font-size: 13px;color: #aaa;line-height: 1.8;">
+                                    <li>放号时间：早上8点，预约截止时间：提前一个工作日18:00前。</li>
+                                    <li>预约周期：1-3个工作日内</li>
+                                    <li>患者可使用身份证号码进行预约，初诊患者就诊当天凭本人身份证原件及短信里的临时卡号到挂号处新建诊疗卡并取号；复诊患者则直接凭短信取号。</li>
+                                    <li>医生开诊时间上午为8:00-12:00，下午分别为15:00-18:00（5-11月份夏季）、14:30-17:30（12-4月份冬季）。</li>
+                                    <li>如需取消预约，请至少提前一个工作日18:00前登录挂号网或致电95169。</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <hr/>
+                        <p class="text-center">
+                            <span>如需在特定时间就诊，</span>
+                            <a href="javascript:;" class="btn btn-sm btn-default">查看科室排班</a>
+                            <span>预约同科室的其他医生</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-body">
+                <h4>在线问诊 <span class="small">问诊费由医生自行设定，平台不收取任何额外费用</span></h4>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button class=" btn btn-info btn-sm btn-block" >
+                            <i></i>
+                            <h4>图文问诊</h4>
+                            <span>暂未开通功能</span>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class=" btn btn-info btn-sm btn-block" >
+                            <i></i>
+                            <h4>电话问诊</h4>
+                            <span>暂未开通功能</span>
+                        </button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class=" btn btn-info btn-sm btn-block" >
+                            <i></i>
+                            <h4>视频问诊</h4>
+                            <span>暂未开通功能</span>
+                        </button>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="panel">
+            <div class="panel-body">
+                <h4>同科医生 <span class="pull-right small"> <a href="javascript:;">更多</a></span></h4>
+                <hr/>
+                <div class="grid-content">
+                    <ul class="list-unstyled">
+                        <li ng-repeat="i in [1,2,3,4]" style="border-bottom: 1px solid #dedede;margin-top: 10px;">
+                            <p class="text-center">
+                                <a href="javascript:;">
+                                    <img width="80" class="img-circle" src="img/doc-unknow.png" alt="陈国忠">
+                                </a>
+                            </p>
+                                <h5 class="text-center">
+                                    <a  href="javascript:;">
+                                        卢杰夫
+                                    </a>
+                                <span>主任医师
+                                </span>
+                                </h5>
+
+                                <p class="hospital">
+                                <span>
+                                    广西中医药大学附属第一医院
+                                </span>
+                                </p>
+
+                                <p class="total">
+                                    累计预约 <strong>2</strong>人次
+                                </p>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

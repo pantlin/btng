@@ -1,0 +1,238 @@
+<link href="../../css/bootstrap.css">
+
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".left-nav">
+            <i class="glyphicon glyphicon-tasks"></i>
+        </button>
+        <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target="#ac">
+            <i class="glyphicon glyphicon-asterisk"></i>
+        </a>
+        <a class="navbar-brand" ui-sref="main">测试Logo</a>
+        <i class="navbar-brand glyphicon glyphicon-indent-left floded-tg" ng-click="asideFolded=!asideFolded"></i>
+        <style>
+            .floded-tg{
+                display: none;
+            }
+            @media (min-width: 768px) {
+                .floded-tg{
+                    display: block;
+                }
+            }
+            .fullscreen{display: none !important;}
+            .top-nav{display: none; }
+            .user-nav{display: none; position: absolute;top:50px; right: 5px; background-color: #f8f8f8;  padding: 0 10px;margin: 0;}
+            .user-bt{ position: absolute;right: 0;top: 50px;}
+            @media (min-width: 768px){
+                .fullscreen{display: inline-block !important;}
+                .top-nav{ display: block; }
+                .user-nav{display: block;}
+            }
+            .top-nav >li{ }
+            .top-nav >li >a{ }
+            /*.animated {*/
+            /*-webkit-animation-fill-mode: both;*/
+            /*-moz-animation-fill-mode: both;*/
+            /*-ms-animation-fill-mode: both;*/
+            /*-o-animation-fill-mode: both;*/
+            /*animation-fill-mode: both;*/
+            /*-webkit-animation-duration: 0.5s;*/
+            /*-moz-animation-duration: 0.5s;*/
+            /*-ms-animation-duration: 0.5s;*/
+            /*-o-animation-duration: 0.5s;*/
+            /*animation-duration: 0.5s;*/
+            /*}*/
+
+            #ac .panel {/*覆盖bootstrap panel 样式*/
+                margin-bottom: 0;
+                background-color:#b9def0 ;
+                border:none;
+                border-bottom: 1px solid #fff;
+                border-radius: 0;
+                -webkit-box-shadow:none;
+                box-shadow:none;
+            }
+        </style>
+
+    </div>
+
+
+
+
+    <ul class="nav navbar-top-links navbar-left top-nav">
+        <li ng-repeat="n in nav"><a href="javascript:;" ng-click="menuChange(n.type)">{{n.title}}</a></li>
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">健康档案</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">疾病管理</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">人群管理</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">健康教育</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">监督协管</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">信息统计</a></li>-->
+        <!--<li><a href="javascript:;" ng-click="menuChange('type2')">系统设置</a></li>-->
+    </ul>
+    <ul class="breadcrumb pull-right  user-nav">
+        <li class="fullscreen"><a ui-fullscreen></a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" aria-haspopup="true" aria-expanded="true">
+                <i class="glyphicon glyphicon-user"></i>
+                <i class="caret"></i>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight pull-right">
+                <li>
+                    <a href="javascript:;">
+                        <p>
+                            <strong>新消息</strong>
+									<span class="pull-right text-muted">
+                                    <em>17:27:03</em>
+                                </span>
+                        </p>
+                        <p>新消息，你有新的关注用户。</p>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:;">
+                        <p>
+                            <strong>提示</strong>
+									<span class="pull-right text-muted">
+                                    <em>17:27:03</em>
+                                </span>
+                        </p>
+                        <p>您的账户余额不足，请及时充值。</p>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="javascript:;">
+                        <p>
+                            <strong>大优惠</strong>
+									<span class="pull-right text-muted">
+                                    <em>17:27:03</em>
+                                </span>
+                        </p>
+                        <p>今日商城大特惠，点击查看</p>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a class="text-center" href="javascript:;">
+                        <strong>没有更多的了</strong>
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="javascript:;"><span class="glyphicon glyphicon-comment"></span></a></li>
+        <li><a href="javascript:;"><span class="glyphicon  glyphicon-bell"></span></a></li>
+        <li><a href="javascript:;"><span class="glyphicon glyphicon-flag"></span></a></li>
+    </ul>
+    <ul class="nav collapse" id="ac">
+        <li class="panel">
+            <a class="collapse-toggle" data-toggle="collapse" data-target="#lv-l1" data-parent="#ac">
+                导航
+            </a>
+            <div class="collapse" id="lv-l1">
+                <div class="panel">
+                    <div class=" panel-body">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="appointmentRegister">基本操作</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">基本操作</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">健康档案</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">基本操作</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">健康档案</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">健康档案</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">基本操作</a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a ui-sref="nav({menu:'jkda'})">健康档案</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="panel">
+            <a class="collapse-toggle" data-toggle="collapse" data-target="#lv-l2" data-parent="#ac">
+                个人信息
+            </a>
+            <div class="collapse " id="lv-l2">
+                <div class="panel">
+                    <div class=" panel-body">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p>
+                                    <a class="center-block" href="javascript:;">
+                                        <i class="glyphicon glyphicon-user"></i>个人信息
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a class="center-block" href="javascript:;">
+                                        <i class="glyphicon glyphicon-comment"></i>消息通知
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a class="center-block" href="javascript:;">
+                                        <i class="glyphicon glyphicon-bell"></i>通知公告
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="col-xs-6">
+                                <p>
+                                    <a class="center-block" href="javascript:;">
+                                        <i class="glyphicon glyphicon-bell"></i>任务计划
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </li>
+
+    </ul>
+</nav>
+
+
+<script type="text/javascript">
+    //    $(function () { //使用bootstrap popover 弹出框  必须初始化 popover 弹出框
+    //        $('[data-toggle="popover"]').popover()
+    //    });
+</script>

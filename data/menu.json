@@ -1,0 +1,35 @@
+{"menu":[
+  {"id": 1, "title": "首页 index","icon":"glyphicon-home","state":"main"},
+  {
+    "id": 2, "title": "表格 table","icon":"glyphicon-list-alt","state":"", "children": [
+    {"id": 21, "title": "一般表格 table basic","icon":"glyphicon-th-list","state":"table"},
+    {"id": 22, "title": "插件 DataTable","icon":"glyphicon-th-list","state":"tableDatatable"},
+    {"id": 23, "title": "插件 UIGrid","icon":"glyphicon-th-list","state":"UIGrid"}
+  ]
+  },
+  {"id": 3, "title": "表单 form","icon":"glyphicon-tasks","state":"", "children": [
+    {"id": 31, "title": "表单元素 Form Elements","icon":"glyphicon-th-list","state":"formElements"},
+    {"id": 32, "title": "表单验证 Validation","icon":"glyphicon-th-list","state":"formValidation"},
+    {"id": 33, "title": "表单验证 2 测试 Validation2","icon":"glyphicon-th-list","state":"formValidation2"},
+    {"id": 34, "title": "分步表格和Tab切换 ","icon":"glyphicon-th-list","state":"formTabWizard"}
+  ]},
+  {"id": 4, "title": "UI 套件","icon":"glyphicon-magnet","state":"","children":[
+    {"id":41,"title":"按钮 Buttons","icon":"glyphicon-th-list","state":"buttons"},
+    {"id":42,"title":"图标 Icons","icon":"glyphicon-th-list","state":"icons"},
+    {"id":43,"title":"树 Tree","icon":"glyphicon-th-list","state":"tree"},
+    {"id":44,"title":"插件集合 UIbootstrap","icon":"glyphicon-th-list","state":"bootstrap"}
+  ]},
+  {"id": 5, "title": "图表 Charts","icon":"glyphicon-calendar","state":"charts"},
+  {"id": 6, "title": "URL参数","icon":"glyphicon-th-list","state":"test"},
+  {"id": 7, "title": "分级菜单","icon":"glyphicon-th-list","state":"","children":[
+    {"id": 71, "title": "2级菜单","icon":"glyphicon-th-list","state":"test"},
+    {"id": 73, "title": "2级菜单","icon":"glyphicon-th-list","state":"test"},
+    {"id": 74, "title": "2级菜单","icon":"glyphicon-th-list","state":"test"}
+  ]},
+  {"id":8,"title":"其他页面 Page","icon":"glyphicon-book","state":"","children":[
+    {"id": 81,"title": "一般页面 bacis","icon":"glyphicon-th-list","state":"pageBacis"},
+    {"id": 82,"title": "打印页 invoice","icon":"glyphicon-th-list","state":"invoice"},
+    {"id": 83, "title": "价格模板 price","icon":"glyphicon-th-list","state":"price"}
+  ]}
+
+]}

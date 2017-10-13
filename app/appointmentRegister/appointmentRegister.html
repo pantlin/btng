@@ -1,0 +1,163 @@
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">快速预约</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9">
+        <div class="panel">
+                <div class=" site">
+                    <span class="glyphicon glyphicon-map-marker "></span><span>广西</span><span>南宁</span>
+                    <button class="btn btn-default btn-sm">切换</button>
+                </div>
+        </div>
+        <div class="panel">
+                <div class=" result-num"><span>找到 <i>34</i> 家医院</span></div>
+                <div class="condition-title">医院等级</div>
+                <div class="condition-content ">
+                    <ul class="list-inline  ">
+                        <li><a href="javascript:void(0);">三级甲等</a></li>
+                        <li><a href="javascript:void(0);">三级医院</a></li>
+                        <li><a href="javascript:void(0);">二级医院</a></li>
+                    </ul>
+                </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ul class="list-unstyled hos-sort  breadcrumb">
+                    <li><a href="javascript:;">综合<i class="glyphicon glyphicon-arrow-down"></i></a></li>
+                    <li><a href="javascript:;">患者评价<i class="glyphicon glyphicon-arrow-down"></i></a></li>
+                    <li><a href="javascript:;">预约量<i class="glyphicon glyphicon-arrow-down"></i></a></li>
+                    <li><a href="javascript:;"><label class="gfm-checkbox"><input
+                            type="checkbox"><span>已开通挂号</span></label></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body ">
+
+                <ul class="list-unstyled hos-list">
+                    <li ng-repeat="m in [1,2,3,4,5,6,7,8,9]">
+                        <div class="hos-box">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    <a href="javascript:;">
+                                        <img src="img/hospital.jpg" alt="广西中医药大学附属第一医院" title="广西中医药大学附属第一医院">
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="hos-messages">
+                                        <p>
+                                            <a href="javascript:;" title="广西中医药大学附属第一医院">广西中医药大学附属第一医院</a>
+                                            <em class="em2">三级甲等</em>
+                                            <img src="img/guahao.png">
+                                        </p>
+                                        <p>
+                                            <span title="0771-5848760"><i class="glyphicon glyphicon-phone-alt"></i>0771-5848760</span>
+                                        </p>
+                                        <p>
+                                            <span title="南宁市东葛路89-9号"><i class="glyphicon glyphicon-map-marker"></i>南宁市东葛路89-9号</span>
+                                        </p>
+                                    </div>
+                                    <div class="hos-num">
+                                        累计 <label>1228</label> 次预约<br>
+                                        累计 <label>22</label> 条患者评价
+                                    </div>
+                                </dd>
+                            </dl>
+                            <a class="cover-href" ui-sref="hospital"
+                               style="height: 100%; left: 0; position: absolute; top: 0;width: 100%;"></a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <nav>
+                    <ul class="pagination pull-right">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-3">
+        <div class="panel">
+            <div class="panel-heading bg-success"></div>
+            <div class="panel-body">
+                <a href="javascript:;">
+                    <i class="glyphicon glyphicon-user"></i>免费咨询
+                </a>
+
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading bg-warning"></div>
+            <div class="panel-body">
+                <a href="javascript:;">
+                    <i class="glyphicon glyphicon-user"></i>今日义诊
+                </a>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-heading bg-info">相关文章</div>
+                <ul class="list-group ">
+                    <li class="list-group-item" ng-repeat="i in [1,2,3,4,5]"> <a href="javascript:;">文章链接{{i}}</a></li>
+                </ul>
+        </div>
+        <div class="panel ">
+            <div class="panel-heading bg-primary">
+                推荐专家
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled doctor-list">
+                <li ng-repeat="i in [1,2,3,4,5]">
+
+                    <dl class="doctor-mss dl-horizontal ">
+                        <dt>
+                            <a class="img" href="javascript:;">
+                                <img class="img-circle" width="50px" src="img/doctor.jpg" alt="段明辉" title="段明辉">
+                            </a>
+
+                        </dt>
+                        <dd>
+                            <p>
+                                <a href="javascript:;" >段明辉</a>
+                                <span class="small">副主任医师</span>
+                            </p>
+                            <p>
+                                <span class="small">苏州大学附属第一医院</span>
+                            </p>
+                            <p>
+                                <span class="small"><i class="glyphicon glyphicon-picture"></i>图文</span>
+                                <span class="small"><i class="glyphicon glyphicon-phone-alt"></i>电话</span>
+                                <span class="small"><i class="glyphicon glyphicon-facetime-video"></i>视频</span>
+                            </p>
+                            <p>
+                                <button class="btn btn-info btn-sm">立即问诊</button>
+                                <span class="small"><i>5人</i>问诊</span>
+                            </p>
+
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>

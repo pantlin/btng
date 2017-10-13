@@ -1,0 +1,10 @@
+{"menu":[
+  {"id": 1, "title": "首 页","icon":"glyphicon-home","state":"main"},
+  {
+    "id": 2, "title": " table","icon":"glyphicon-list-alt","state":"", "children": [
+    {"id": 21, "title": " table basic","icon":"glyphicon-th-list","state":"table"},
+    {"id": 22, "title": " DataTable","icon":"glyphicon-th-list","state":"tableDatatable"},
+    {"id": 23, "title": " UIGrid","icon":"glyphicon-th-list","state":"UIGrid"}
+  ]
+  }
+]}

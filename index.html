@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+    <title>Ag+Bt</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="lib/extend/DataTables/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="fonts/font-awesome-4.6.3/css/font-awesome.css" rel="stylesheet">
+    <link href="lib/extend/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="lib/extend/ui-grid/ui-grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body ng-app="app">
+<div class="box" style="padding-top: 50px;" ng-init="asideFolded=true" ng-class="{true:'',false:'asideFolded'}[asideFolded]">
+    <head-dir></head-dir>
+    <menu-dir></menu-dir>
+    <div id="page-wrapper">
+        <div ui-view=""></div>
+    </div>
+</div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/angular-locale_zh-cn.js"></script>
+<script src="lib/angular-animate.js"></script>
+<script src="lib/angular-touch.js"></script>
+<script src="lib/angular-ui-route.js"></script>
+<script src="lib/extend/ocLazyLoad/ocLazyLoad.js"></script>
+<script src="lib/extend/DataTables/js/jquery.dataTables.js"></script>
+<script src="lib/extend/DataTables/js/dataTables.bootstrap.js"></script>
+<script src="lib/extend/highCharts/highCharts.js"></script>
+<script src="lib/extend/ui-grid/ui-grid.js"></script>
+<script src="lib/extend/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script src="lib/extend/screenfull.min.js"></script>
+<script src="lib/extend/chartJS/Chart.js"></script>
+
+
+<script src="app.module.js"></script>
+<script src="route.config.js"></script>
+<script src="ocLazyLoad.config.js"></script>
+<script src="app/layout/menu.service.js"></script>
+<script src="app/layout/menu.directive.js"></script>
+<script src="app/layout/head.directive.js"></script>
+
+
+
+
+<script >
+    //    angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+</script>
+</body>
+</html>

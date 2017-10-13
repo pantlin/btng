@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Table Datatable</h2>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                DataTables
+            </div>
+            <div class="panel-body">
+                <table id="example" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>engine</th>
+                            <th>Browser</th>
+                            <th>Platform(s)</th>
+                            <th>Engine version</th>
+                            <th>CSS grade</th>
+                        </tr>
+                    </thead>
+                </table>
+                <script>
+                    $(function () {
+                        $('#example').dataTable({
+                            "bSort" : false,
+                            "sScrollX" : "100%",
+                            "language": {
+                                "url":"data/datatables.chinese.lang"
+                            },
+                            "ajax": "data/datatable.json",
+                            "columns": [
+                                {"data": "engine"},
+                                {"data": "browser"},
+                                {"data": "platform"},
+                                {"data": "version"},
+                                {"data": "grade"}
+                            ]
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

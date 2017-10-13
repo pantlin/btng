@@ -1,0 +1,181 @@
+<link href="../../css/bootstrap.css" rel="stylesheet">
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">全部医生</h2>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-9">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                <a href="javascript:;">
+                                    <img src="img/hospital.jpg" alt="广西中医药大学附属第一医院" title="广西中医药大学附属第一医院">
+                                </a>
+                            </dt>
+                            <dd class="hospital-massages">
+                                <h4> 广西中医药大学附属第一医院 <span class="small" style="color: red">三级甲等</span></h4>
+                                <p><i class="glyphicon glyphicon-map-marker"></i>地址： 南宁市东葛路89-9号 <a href="javascript:;">查看地图</a>
+                                </p>
+                                <p><i class="glyphicon glyphicon-phone-alt"></i>电话： 0771-5848760</p>
+                                <p><i class="glyphicon glyphicon-home"></i>官网： http://www.gxzyy.com.cn/</p>
+                                <p><i class="glyphicon glyphicon-pencil"></i>
+                                    简介： 广西中医药大学第一附属医院成立于1941年，
+                                    是一所集医疗、教学、科研、预防保健、康复为一体的现代化大型中医医院。目前开放床位...
+                                    <a href="javascript:;">更多</a>
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="hospital-status">
+                            <p>
+                                <a  ui-sref="allDepartmentDoctor" class="btn btn-info btn-block">
+                                    <i class=""></i><span>预约挂号</span>
+                                </a>
+                            </p>
+                            <div class="data">
+                                <div class="total">
+                                    <p>
+                                        <span>预约量</span>
+                                        <strong>
+                                            1244
+                                        </strong>
+                                        <span>导医服务</span>
+                                        <strong>
+                                            89%
+                                            很满意
+                                        </strong>
+                                    </p>
+                                    <p>
+                                        <span>患者评价</span>
+                                        <strong> 22
+                                        </strong>
+                                        <span>候诊时间</span>
+                                        <strong>
+                                            95%
+                                            非常快
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel">
+            <div class="panel-body">
+                <p>
+                    找到 474 位医生
+                </p>
+                <p>
+                    <div class="pull-left" style=";padding:0 5px 0 0;border-right: 1px solid #dedede;">就诊日期</div>
+                    <ul class="list-inline">
+                        <li><a href="javascript:;">06/16（周四）</a></li>
+                        <li><a href="javascript:;">06/17（周五）</a></li>
+                        <li><a href="javascript:;">06/18（周六）</a></li>
+                    </ul>
+                </p>
+
+                <p>
+                    <div class="pull-left" style=";padding:0 5px 0 0;border-right: 1px solid #dedede;">科室筛选</div>
+                <ul class="list-inline">
+                    <li ng-repeat="i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,48,51,52,53,54,55,56,57,58,59]"><a href="javascript:;">老专家诊室{{i}}</a></li>
+                </ul>
+                    <!--<button class="btn btn-default btn-sm" type="button" data-toggle="collapse" data-target="#collapseExample" >-->
+                        <!--更多  <i class="glyphicon glyphicon-chevron-down"></i>-->
+                    <!--</button>-->
+                    <!--<div class="collapse in" id="collapseExample">-->
+                        <!---->
+                    <!--</div>-->
+                </p>
+                <hr/>
+                <ul class="list-unstyled">
+                    <li ng-repeat="i in [1,2,3,4,5,6,7,8]">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <dl class="dl-horizontal" >
+                                    <dt style="width: 80px;">
+                                        <a href="javascript:;">
+                                            <img width="80px;" class="img-circle" src="img/doc-unknow.png">
+                                        </a>
+                                    </dt>
+                                    <dd style="margin-left: 100px;">
+                                        <a href="javascript:;">
+                                            陈国忠
+                                        </a>
+                                        <p class="doc-grade">
+                                            <span class="level">主任医师</span>
+                                            <span class="title"></span>
+                                        </p>
+                                        <p class="doc-hosp-dept">
+                                            <a href="javascript:;">
+                                                脾胃病科
+                                            </a>
+                                            &nbsp;
+                                            <a href="javascript:;">
+                                                消化内科
+                                            </a>
+                                        </p>
+                                    </dd>
+
+                                </dl>
+                                <p>
+                                    <label>擅长：</label>
+                                    消化性溃疡、炎症性肠病、胆胰疾病，胃肠...
+                                </p>
+
+                            </div>
+                            <div class="col-md-2">
+                                <p class="text-center">预约量 <span class="text-info">9</span></p>
+                                <p class="text-center">
+                                    <label>疗效：</label><span>暂无</span>
+                                </p>
+                                <p class="text-center">
+                                    <label>态度：</label><span>暂无</span>
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <p class="text-center">
+
+                                    <a ui-sref="doctor" class="btn bg-info">挂号</a>
+
+                                    <a href="javascript:;" class="btn bg-info disabled"> 问诊 </a>
+                                </p>
+                            </div>
+                        </div>
+                        <hr/>
+                    </li>
+                </ul>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

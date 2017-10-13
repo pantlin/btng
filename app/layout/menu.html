@@ -1,0 +1,58 @@
+<div class="navbar-default sidebar " role="navigation" >
+    <div class="collapse navbar-collapse left-nav" >
+        <!--菜单为缩放前 start-->
+        <ul class="nav nav-sidebar nav-wrap " id="accordion" ng-show="asideFolded">
+            <li class="sidebar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="搜索框......" aria-describedby="basic-addon2">
+                        <span class="input-group-addon">
+						  	<span class=" glyphicon glyphicon-search"></span>
+                        </span>
+                </div>
+            </li>
+            <li ng-repeat="m in menulist" ng-init="children=m.children.length>0;" class="panel">
+                <a  ui-sref="{{m.state}}" data-toggle="collapse" data-target="#{{m.id}}" ng-if="!children" ui-sref-active="active">
+                    <i class="glyphicon" ng-class="m.icon"></i>
+                    <span>{{m.title}}</span>
+                </a>
+                <a data-toggle="collapse" data-target="#{{m.id}}" ng-if="children"   data-parent="#accordion">
+                    <i class="glyphicon" ng-class="m.icon"></i>
+                    <span>{{m.title}}</span>
+                    <span class="glyphicon right glyphicon-chevron-left" ></span>
+                </a>
+                <ul id="{{m.id}}" class="nav collapse nav-second-level"  ng-if="children">
+                    <li ng-repeat="c in m.children" ng-init="children2=c.children.length>0">
+                        <a ui-sref="{{c.state}}" data-toggle="collapse" data-target="#{{c.id}}" ui-sref-active="active">
+                            <!--<i class="glyphicon glyphicon-star-empty"></i>-->
+                            <span>{{c.title}}</span>
+                        </a>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--菜单为缩放前 end-->
+
+        <!--菜单为缩放后 start-->
+        <ul class="nav nav-sidebar nav-wrap folded " ng-show="!asideFolded">
+            <li ng-repeat="m2 in menulist" ng-init="chil=m2.children.length>0;" >
+                <a>
+                    <i class="glyphicon" ng-class="m2.icon"></i>
+                </a>
+                <ul class="nav collapse nav-second-level" >
+                    <li ><a style="background-color:#444444;color: #f1f1f1;font-weight: bolder;"> <span>{{m2.title}}</span></a></li>
+                    <li ng-if="!chil" ui-sref-active="active"><a ui-sref="{{m2.state}}">{{m2.title}}</a></li>
+                    <li ng-repeat="c2 in m2.children" ng-init="children2=c2.children.length>0">
+                        <a ui-sref="{{c2.state}}"  ui-sref-active="active">
+                            <span>{{c2.title}}</span>
+                        </a>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--菜单为缩放后 end-->
+
+    </div>
+
+</div>

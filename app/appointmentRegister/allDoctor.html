@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">科室全部医生</h2>
+    </div>
+    <div class="col-lg-12">
+        <p>
+            找到 17 位医生
+        </p>
+        <p>
+        <div class="pull-left" style=";padding:0 5px 0 0;border-right: 1px solid #dedede;">医生职称</div>
+        <ul class="list-inline">
+            <li><a href="javascript:;">主任医师</a></li>
+            <li><a href="javascript:;">副主任医师</a></li>
+            <li><a href="javascript:;">主治医师</a></li>
+        </ul>
+        </p>
+        <div class="panel">
+            <div class="panel-body">
+                <form class="form-inline">
+                    <label>就诊日期：</label>
+                    <div class="input-group">
+                        <input ng-init="op1=false" type="text" class="form-control" uib-datepicker-popup="yyyy-MMMM-dd"
+                               ng-model="dt1"
+                               is-open="op1" datepicker-options="dateOptions" ng-required="true" close-text="关闭"
+                               alt-input-formats="altInputFormats"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="op1=!op1">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                    </div>
+                    <span>-</span>
+                    <div class="input-group">
+                        <input ng-init="op2=false" type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy"
+                               ng-model="dt2"
+                               is-open="op2" datepicker-options="dateOptions" ng-required="true" close-text="关闭"
+                               alt-input-formats="altInputFormats"/>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="op2=!op2">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                    </div>
+                    <span><a href="javascript:;"> 登录 </a>查看最新号源状态</span>
+                </form>
+                <hr/>
+                <div class="text-center text-warning">搜索列表的号源更新有延迟，请点击医生姓名到医生主页关注号源实时动态!</div>
+                <hr/>
+                <ul class="list-unstyled">
+                    <li ng-repeat="i in [1,2,3,4,5,6,7,8]">
+                        <div class="row">
+                            <div class="col-md-5">
+                                    <dl class="dl-horizontal" >
+                                        <dt style="width: 80px;">
+                                            <a href="javascript:;">
+                                                <img width="80px;" class="img-circle" src="img/doc-unknow.png">
+                                            </a>
+                                        </dt>
+                                        <dd style="margin-left: 100px;">
+                                            <a href="javascript:;">
+                                                陈国忠
+                                            </a>
+                                            <p class="doc-grade">
+                                                <span class="level">主任医师</span>
+                                                <span class="title"></span>
+                                            </p>
+                                            <p class="doc-hosp-dept">
+                                                <a href="javascript:;">
+                                                    脾胃病科
+                                                </a>
+                                                &nbsp;
+                                                <a href="javascript:;">
+                                                    消化内科
+                                                </a>
+                                            </p>
+                                        </dd>
+
+                                    </dl>
+                                    <p>
+                                        <label>擅长：</label>
+                                        消化性溃疡、炎症性肠病、胆胰疾病，胃肠...
+                                    </p>
+
+                            </div>
+                            <div class="col-md-2">
+                                <p class="text-center">预约量 <span class="text-info">9</span></p>
+                                <p class="text-center">
+                                    <label>疗效：</label><span>暂无</span>
+                                </p>
+                                <p class="text-center">
+                                    <label>态度：</label><span>暂无</span>
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                    <p class="text-center">
+
+                                        <a ui-sref="doctor" class="btn bg-info">挂号</a>
+
+                                        <a href="javascript:;" class="btn bg-info disabled"> 问诊 </a>
+                                    </p>
+                            </div>
+                        </div>
+                        <hr/>
+                    </li>
+                </ul>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

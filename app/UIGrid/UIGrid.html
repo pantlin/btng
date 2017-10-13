@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-lg-12"><h2 class="page-header">uiGrid Temp</h2></div>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                UI Grid
+            </div>
+
+            <div class="table-responsive">
+                <div ui-grid="gridOptions" ui-grid-pagination></div>
+            </div>
+        </div>
+        <div class="panel panel-default  ">
+            <div class="panel-heading">
+                UI Grid
+            </div>
+            <form class="form-inline" name="tp">
+                <div class="table-responsive">
+                    <div ui-grid="gridOptions2" ui-grid-pagination ui-grid-selection></div>
+                    <p>当前页: {{ gridApi2.pagination.getPage() }} 共 {{ gridApi2.pagination.getTotalPages() }}</p>
+                    <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.previousPage()">
+                        上一页
+                    </button>
+                    <button type="button" class="btn btn-success" ng-click="gridApi2.pagination.nextPage()">
+                        下一页
+                    </button>
+                    <div class="form-group">
+                        <input name="checkPage" class="form-control"
+                               ng-model="toPage"
+                               min="1"
+                               max="{{ gridApi2.pagination.getTotalPages() }}"
+                               style="width: 80px"
+                               type="number"
+                               required>
+                    </div>
+
+                    <button type="button" ng-init="toPage=1" class="btn btn-success"
+                            ng-click="gridApi2.pagination.seek(toPage)" ng-disabled="tp.checkPage.$invalid">
+                        跳转到第 {{toPage}} 页
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
